@@ -1,2 +1,6 @@
 # jcha1925
 The objective is to make a 2D simulation of a selected number of (gas) molecules moving inside a tank for a selected amount of time steps. The title should show the current time step and the total number of collision since the start. 
+
+The user will be able to select number of molecules, size of the tank (width and height), and molecules' colors, initial locations (x and y coordinates), radii, and velocities (in x and y directions). 
+
+There is a main file (start.m) that demonstrates the simulation, this file will include all the parameters needed to call on moleculeMotion (the major function that runs the simulation). moleculeMotion will first call on molecules function, which will draw all the molecules based on parameters related to molecules, and this molecules function will produce handles (an array that will use later). Then moleculeMotion will loop over all time steps, update the positions based on velocities and call on 2 other functions, boundaryCheck and collisionCheck, to update positions and velocities again based on molecules' collision with other molecules or with the boundary of the tank. After updating, moleculeMotion will call updateMolecules function, which updates the molecules' positions using the handles and the updated positions matrix.
